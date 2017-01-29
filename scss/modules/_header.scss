@@ -1,0 +1,38 @@
+header {
+	background: url('../img/hero-background.png') 50% 0 repeat fixed;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	color: $color-black;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+	.navbar-default {
+	    background-color: transparent;
+	    border: none;
+	    font-size: $paragraph-size;
+	    .navbar-nav {
+	    	li {
+	    		a {
+	    			color: $color-black;
+	    			font-weight: 300;
+	    		}
+	    	}
+	    }
+	    .collapse.navbar-collapse {
+	    	padding-top: 20px;
+	    	padding-bottom: 20px;
+	    }
+	}
+	.hero-text {
+		text-align: center;
+
+		p {
+			padding-top: 10px;
+			font-size: $paragraph-size;
+		}
+
+	}
+}
