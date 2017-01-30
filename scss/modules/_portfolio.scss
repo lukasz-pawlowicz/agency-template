@@ -1,0 +1,170 @@
+
+	$colorBG: white;
+$colorBGdark: #333;
+
+@mixin flex-parent {
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin flex-column {
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+@mixin flex-item($units) {
+  flex: $units;
+  -webkit-flex: $units;
+}
+
+@mixin invisible {
+  opacity: 0;
+}
+
+@mixin nomargin {
+  margin: 0;
+}
+
+@mixin nopadding {
+  padding: 0;
+}
+
+@mixin nospace {
+  @include nomargin;
+  @include nopadding;
+}
+
+
+
+#responsive-sizing {
+  text-align: center;
+  .spec {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+  }
+  .breakpoint {
+    background-color: #333;
+    color: white;
+    border-radius: 5px 0 0 5px;
+  }
+  .vis-image-count {
+    border-radius: 0 5px 5px 0;
+    background-color: #ddd;
+  }
+  .breakpoint,
+  .vis-image-count {
+    padding: 5px 10px;
+  }
+}
+
+/* Begin Scroller Rules */
+
+.horiz-scroll {
+  @include flex-parent;
+  @include flex-column;
+  overflow: visible;
+  position: relative;
+  h2 {
+    font-weight: 600;
+  }
+
+  .scroller {
+    max-height: 30vw;
+    position: relative;
+    @include flex-parent;
+    @include flex-item(1);
+    background-color: $colorBG;
+    
+    .left-scroll {
+      left: 0;
+    }
+
+    .right-scroll {
+      right: 0;
+    }
+
+    .left-scroll,
+    .right-scroll {
+      @include flex-parent;
+      @include flex-column;
+      padding: 0 2vw;
+      overflow-x: hidden;
+      z-index: 1;
+      justify-content: center;
+      -webkit-justify-content: center;
+      position: absolute;
+      height: 100%;
+      p {
+        font-size: 3em;
+        color: white;
+        text-shadow: 0 0 10px #333;
+        margin: 0;
+        @media only screen and (max-width: 480px) {
+          color: black;
+        }
+      }
+    }
+    
+    .scrollable-x {
+      white-space: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+    
+    .scrollable-x::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollable-x::-webkit-scrollbar {
+      width: .375em;
+      max-width: 12px;
+    }
+
+    .scrollable-x::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    .scrollable-x::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, .25);
+      border-radius: 1em;
+    }
+
+    .scroll-images {
+      position: relative;
+      @include flex-item(8);
+      order: 2;
+      -webkit-order: 2;
+      z-index: 0;
+      font-size: 0;
+      overflow-y: visible;
+      padding: 10% 0;
+      margin: -10% 0;
+      text-align: center;
+      img {
+        width: 25%;
+        top: 0;
+        z-index: 0;
+        -webkit-transition: all 100ms;
+        transition: all 100ms;
+        position: relative;
+        @media only screen and (max-width: 960px) {
+          width: 33.333%;
+        }
+        @media only screen and (max-width: 720px) {
+          width: 50%;
+        }
+        @media only screen and (max-width: 480px) {
+          width: 50%;
+          margin: 0 25%;
+        }
+        
+      }
+    }
+  }
+}
+
+.invisible {
+  @include invisible;
+  transition:.5s ease-in-out;
+}
+

@@ -16,6 +16,21 @@
             }); // end window scroll
         });
     });
+    $(function() {
+        var $window = $(window);  
+        $('section[data-type="background"]').each(function(){
+            var $bgobj = $(this); // assigning the object
+            $(window).scroll(function() {
+                // Scroll the background at var speed
+                // the yPos is a negative value because we're scrolling it UP!                              
+                var yPos = -($window.scrollTop() / $bgobj.data('speed'));
+                // Put together our final background position
+                var coords = '50% '+ yPos + 'px';
+                // Move the background
+                $bgobj.css({ backgroundPosition: coords });
+            }); // end window scroll
+        });
+    });
 
 
     //==========BUTTON EFFECT==========// 
@@ -58,3 +73,27 @@
         }
       });
     });
+
+
+
+    //==========GOOGLE MAPS==========//
+    var map;
+function initialize() {
+  
+  var mapPos = new google.maps.LatLng( 51.239754,22.553387 ),
+      image = 'http://i67.tinypic.com/5jy5bt.png',
+      mapId = document.getElementById('map'),
+      mapOptions = {
+        scrollwheel: false,
+        zoom: 15,
+        center: mapPos
+      },
+      map = new google.maps.Map(mapId,mapOptions), 
+      marker = new google.maps.Marker({       
+        position: mapPos,  
+        map: map,
+        icon: image
+      }); 
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);

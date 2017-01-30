@@ -3,4 +3,21 @@
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizelegibility;
 	background-size: cover;
+	padding-bottom: 100px;
+	width: 100%;
+	text-align: center;
+	img {
+		padding-bottom: 20px;
+	}
+	h2, h4 {
+		color: $color-white;
+	}
+	p {
+		padding-top: 30px;
+		line-height: 26px;
+		color: $color-gray;
+	}
+	.button {
+		margin-top: 95px;
+	}
 }
