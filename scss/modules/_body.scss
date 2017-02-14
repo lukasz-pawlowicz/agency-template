@@ -69,51 +69,28 @@ p {
 .centered {
   text-align: center;
 }
-.button{
-  position: relative;
-  display: inline-block;
-  padding: 18px 40px;
+a.button {
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+  color: #ffffff;
+  display: block;
+  margin: 20px auto;
+  max-width: 180px;
   text-decoration: none;
   text-align: center;
-  cursor: pointer;
-  user-select: none;
-  color: white;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: #49007c; /* Old browsers */
-      background: -moz-linear-gradient(left,  #49007c 0%, #c20085 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(left,  #49007c 0%,#c20085 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to right,  #49007c 0%,#c20085 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49007c', endColorstr='#c20085',GradientType=1 ); /* IE6-9 */
-      border-radius: 25px;
-      transition: box-shadow .5s ease, transform .2s ease; 
-      will-change: transform;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-      transform:
-        translateY(var(--ty, 0))
-        rotateX(var(--rx, 0))
-        rotateY(var(--ry, 0))
-        translateZ(var(--tz, -12px));
-    }
-    &:hover::before {
-      box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-    }
-    &::after {
-      position: relative;
-      display: inline-block;
-      content: attr(data-title);
-      transition: transform .2s ease; 
-      font-weight: bold;
-      letter-spacing: .01em;
-      will-change: transform;
-      transform:
-        translateY(var(--ty, 0))
-        rotateX(var(--rx, 0))
-        rotateY(var(--ry, 0));
-    }
-  }
+  border-radius: 4px;
+  padding: 20px 30px;
+  background: #49007c; /* Old browsers */
+  background: -moz-linear-gradient(left,  #49007c 0%, #c20085 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #49007c 0%,#c20085 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #49007c 0%,#c20085 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49007c', endColorstr='#c20085',GradientType=1 ); /* IE6-9 */
+}
+
+a.button:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
+}

@@ -15,9 +15,12 @@ header {
 	    font-size: $paragraph-size;
 	    .navbar-nav {
 	    	li {
+	    		text-align: center;
+
 	    		a {
 	    			color: $color-black;
 	    			font-weight: 300;
+	    			text-align: center;
 	    		}
 	    	}
 	    }
@@ -25,6 +28,11 @@ header {
 	    	padding-top: 20px;
 	    	padding-bottom: 20px;
 	    }
+	}
+	.navbar-brand {
+		img {
+			padding-top: 13px;
+		}
 	}
 	.hero-text {
 		text-align: center;

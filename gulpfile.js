@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+
 
 
 gulp.task('jshint', function() {
@@ -12,9 +12,7 @@ gulp.task('jshint', function() {
 
 gulp.task('sass', function() {
 	return gulp.src('scss/*.scss')
-	.pipe(sourcemaps.init())
-	.pipe(sass({outputStyle: 'expanded', sourceComments: 'map'}))
-	.pipe(sourcemaps.write())
+	.pipe(sass({outputStyle: 'expanded'}))
 	.pipe(gulp.dest('assets/css'))
 });
 
